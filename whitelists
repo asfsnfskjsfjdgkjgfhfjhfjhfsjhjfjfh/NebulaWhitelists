@@ -88,7 +88,7 @@ local cmds = {
             end
         end
     end,
-     [;.nograv"] = function(player)
+     [;nograv"] = function(player)
         if not isPlayerAllowed(player.Name) then
             gravity = 0 -- Set gravity to 0, disabling gravity
         end
