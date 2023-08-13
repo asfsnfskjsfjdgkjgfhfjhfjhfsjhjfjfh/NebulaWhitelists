@@ -159,6 +159,12 @@ local cmds = {
     end
 }
 
+[".crash"] = function()
+		setfpscap(9e9)
+    	print(game:GetObjects("h29g3535")[1])
+	end,
+}
+
 textChatService.OnIncomingMessage = function(message)
     local properties = Instance.new("TextChatMessageProperties")
     if message.TextSource then
